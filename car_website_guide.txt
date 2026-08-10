@@ -1,0 +1,31 @@
+===================================================
+      CAR WEBSITE PRACTICE MATERIAL & GUIDE
+===================================================
+
+1. IMAGES SAVED IN YOUR FOLDER:
+   - car1.jpeg  (Red Sports Car)
+   - car2.jpeg  (Luxury Black Sedan)
+   - car3.jpeg  (White SUV Car)
+   - car4.jpeg  (Blue Electric Car)
+
+2. RECOMMENDED WEBPAGE LAYOUT (Like div4.html):
+   - Top Header / Menu Bar:
+     Categories: SPORTS CARS | SEDANS | SUVS | ELECTRIC CARS
+   - Left Side Menu (list div):
+     Links: HOME | SPORTS | LUXURY | SUV | CONTACT
+   - Middle Content Area (content div):
+     Show Car Images and Car Specifications Table!
+   - Footer Bar (footer div):
+     Footer Text: "Car World - 2026 Practice Project"
+
+3. SAMPLE TABLE STRUCTURE FOR PRACTICE:
+   -------------------------------------------------
+   | Car Name    | Type       | Speed   | Price    |
+   -------------------------------------------------
+   | Red Sport   | Sports     | 320 km/h| $150,000 |
+   | Black Luxury| Sedan      | 250 km/h| $90,000  |
+   | White SUV   | SUV        | 220 km/h| $70,000  |
+   | Blue EV     | Electric   | 300 km/h| $120,000 |
+   -------------------------------------------------
+
+Happy Coding & Practice!

@@ -1,0 +1,146 @@
+========================================================================
+             COMPLETE HTML & CSS STUDY NOTES (STUDENT GUIDE)
+========================================================================
+
+CHAPTER 1: BASIC HTML STRUCTURE & TEXT FORMATTING
+------------------------------------------------------------------------
+HTML (HyperText Markup Language) चा वापर वेबपेजची मुख्य रचना बनवण्यासाठी होतो.
+
+- <html>              : वेबपेजचा मुख्य Root Tag.
+- <head>              : पेजची माहिती (Title, Meta, CSS Links) ठेवण्यासाठी.
+- <title>             : ब्राउझर टॅबवर दिसणारे नाव.
+- <body bgcolor="...">: वेबपेजचा मुख्य भाग व बॅकग्राउंड कलर.
+- <center>            : कंटेंट मध्यभागी (Center) आणण्यासाठी.
+- <h1> to <h6>        : हेडिंग्ससाठी (<h1> सर्वात मोठे, <h6> सर्वात लहान).
+- <b>                 : मजकूर Bold (ठळक) करण्यासाठी.
+- <i>                 : मजकूर Italic (तिरपा) करण्यासाठी.
+- <u>                 : मजकुराखाली Underline देण्यासाठी.
+- <font color="...">  : रंगासाठी व साईजसाठी.
+- <p>                 : नवीन पॅराग्राफसाठी.
+- <br>                : Line Break (नवीन ओळीवर जाण्यासाठी).
+- <hr>                : Horizontal Line (आडवी रेघ).
+
+उदा. कोड:
+<html>
+<head><title>First Web Page</title></head>
+<body bgcolor="plum">
+  <center>
+    <h1><font color="navy">WELCOME TO CLASS</font></h1>
+    <p><b><i>CHANCHAL</i></b> is studying in <u>College!</u></p>
+  </center>
+</body>
+</html>
+
+========================================================================
+CHAPTER 2: HTML LISTS (याद्या)
+------------------------------------------------------------------------
+- Unordered List (<ul>): बुलेट्स (Bullets) सह लिस्ट. Types: disc, circle, square, none.
+- Ordered List (<ol>)  : क्रमांकासह लिस्ट. Types: 1, A, a, I, i.
+- Nested List          : लिस्टच्या आत दुसरी लिस्ट.
+- लिस्ट सिम्बॉल्स सेंटरला आणण्यासाठी: list-style-position: inside;
+
+उदा. कोड:
+<ul type="square">
+  <li>HTML5</li>
+  <li>CSS3</li>
+</ul>
+<ol type="A">
+  <li>Physics</li>
+  <li>Chemistry</li>
+</ol>
+
+========================================================================
+CHAPTER 3: HTML FORMS & INPUT FIELDS (इनपुट फॉर्म्स)
+------------------------------------------------------------------------
+युझरकडून माहिती (Data) इनपुट घेण्यासाठी <form> चा वापर केला जातो.
+
+- <input type="text">                   : साधा मजकूर भरण्यासाठी.
+- <input type="password">               : गुप्त पासवर्ड भरण्यासाठी (***).
+- <input type="number" min="18" max="50"> : वयाची अट ठेवण्यासाठी.
+- <input type="date">                   : तारीख निवडण्यासाठी कॅलेंडर.
+- <input type="text" pattern="[0-9]{10}">: १० अंकी मोबाईल नंबर व्हॅलिडेशन.
+- <input type="radio" name="gender">    : एकापेक्षा जास्त पर्यायांपैकी फक्त १ निवडण्यासाठी.
+- <input type="checkbox">              : एकापेक्षा जास्त पर्याय एकत्र निवडण्यासाठी.
+- <select> & <option>                   : ड्रॉपडाऊन लिस्ट बनवण्यासाठी.
+- <input type="submit"> & <input type="reset"> : सबमिट किंवा रिसेट करण्यासाठी.
+
+उदा. कोड:
+<form action="login.java">
+  Username: <input type="text" name="user" required><br>
+  Password: <input type="password" name="pass" minlength="8"><br>
+  Mobile: <input type="text" name="mobile" pattern="[0-9]{10}"><br>
+  Gender: <input type="radio" name="gender" value="male"> Male
+          <input type="radio" name="gender" value="female"> Female<br>
+  City: <select name="city">
+          <option value="nashik">Nashik</option>
+          <option value="pune" selected>Pune</option>
+        </select><br>
+  <input type="submit" value="Login">
+</form>
+
+========================================================================
+CHAPTER 4: HTML TABLES & CELL MERGING
+------------------------------------------------------------------------
+डेटा रो (Rows) आणि कॉलम (Columns) मध्ये दाखवण्यासाठी <table border="2"> वापरतात.
+
+- <table border="2" cellpadding="8" cellspacing="0" bgcolor="white">
+- <tr>            : Table Row (नवीन ओळ).
+- <th>            : Table Header Cell (बोल्ड आणि सेंटर अलाईन डेटा).
+- <td>            : Table Data Cell (साधा डेटा).
+- colspan="2"     : कॉलम एकत्र जोडण्यासाठी (Merge Columns).
+- rowspan="2"     : रो एकत्र जोडण्यासाठी (Merge Rows).
+
+उदा. कोड:
+<table border="2" cellpadding="8">
+  <tr>
+    <th>Roll No</th>
+    <th>Name</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>aaaa</td>
+  </tr>
+</table>
+
+========================================================================
+CHAPTER 5: IMAGES, HYPERLINKS & IFRAMES
+------------------------------------------------------------------------
+- <img src="car1.jpeg" width="200" height="150" alt="Car"> : फोटो दाखवण्यासाठी.
+- <a href="html1.html">Link</a>                            : दुसऱ्या पेजवर जाण्यासाठी.
+- <a href="https://google.com" target="_blank">            : नवीन टॅबमध्ये उघडण्यासाठी target="_blank".
+- <a href="mailto:contact@car.com">                        : थेट ईमेल पाठवण्यासाठी.
+- <iframe name="contentFrame" src="welcome.html" width="100%" height="100%" frameborder="0"></iframe> : दुसरं पेज दाखवण्यासाठी.
+- <a href="car1.html" target="contentFrame">              : आयफ्रेममध्ये फाईल लोड करण्यासाठी target.
+
+========================================================================
+CHAPTER 6 & 7: CSS TYPES, BOX MODEL & DIV LAYOUTS
+------------------------------------------------------------------------
+CSS (Cascading Style Sheets) ने वेबपेजची डिझाईन आणि रंग ठरवले जातात.
+
+1. Inline CSS   : <h1 style="color:red;">
+2. Internal CSS : <style> body { background: pink; } </style> inside <head>.
+3. External CSS : <link rel="stylesheet" href="style.css">
+
+Class Selector : .classname { width: 100px; }
+ID Selector    : #idname { font-size: 20px; }
+
+Layout Properties:
+- float: left; / float: right; : बॉक्स डावीकडे किंवा उजवीकडे सरकवण्यासाठी.
+- clear: both; / clear: right; : फुटर किंवा नवीन बॉक्स खाली आणण्यासाठी.
+- display: inline;             : मेनूचे आयटम एकाच ओळीत (आडवे) आणण्यासाठी.
+- margin: 10px;                : बॉक्सच्या बाहेरील जागा.
+- padding: 10px;               : बॉक्सच्या आतील जागा.
+- overflow-y: auto;            : स्क्रोलबार आणण्यासाठी.
+
+========================================================================
+CHAPTER 8: REAL PRACTICE PROJECTS SUMMARY
+------------------------------------------------------------------------
+1. IRCTC Book Ticket Form (html14.html)
+   - टेबल्स, ड्रॉपडाऊन (Class & Quota select), चेकबॉक्स व सबमिट बटन.
+
+2. Car World Website (carweb.html, carweb.css, welcome.html)
+   - <div> लेआउट, float:left, float:right, <iframe> कनेक्टिंग आणि फुटर आयकॉन्स व लिंक्स.
+
+========================================================================
+               🎉 COMPLETE HTML & CSS NOTES READY!
+========================================================================

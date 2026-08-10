@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full-Stack HTML & CSS - Handwritten Master Study Hub</title>
+  <!-- Google Fonts: Kalam, Caveat, Architects Daughter, Outfit, Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@600;700&family=Fira+Code:wght@400;600&family=Kalam:wght@300;400;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --paper-bg: #fffdf5;
+      --line-color: #e2e8f0;
+      --margin-color: #ff8a8a;
+      --ink-blue: #1e3a8a;
+      --ink-black: #1f2937;
+      --highlighter-yellow: #fef08a;
+      --highlighter-green: #bbf7d0;
+      --highlighter-pink: #fbcfe8;
+      --sticky-yellow: #fef9c3;
+      --sticky-pink: #ffe4e6;
+      --sticky-green: #dcfce7;
+      --font-hand: 'Kalam', 'Caveat', 'Segoe UI', cursive, sans-serif;
+      --font-title: 'Caveat', 'Comic Sans MS', cursive, sans-serif;
+      --font-code: 'Fira Code', 'Consolas', monospace;
+      --font-sans: 'Outfit', 'Segoe UI', sans-serif;
+    }
+
+    /* Paper Themes */
+    body.theme-ruled {
+      --paper-bg: #faf7eb;
+      --line-color: #d1d5db;
+      background-image: repeating-linear-gradient(var(--paper-bg) 0px, var(--paper-bg) 27px, var(--line-color) 28px);
+    }
+    body.theme-yellow {
+      --paper-bg: #fff9c4;
+      --line-color: #e6ee9c;
+      --margin-color: #ef5350;
+      background-image: repeating-linear-gradient(var(--paper-bg) 0px, var(--paper-bg) 27px, var(--line-color) 28px);
+    }
+    body.theme-grid {
+      --paper-bg: #ffffff;
+      background-image: linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    body.theme-dark {
+      --paper-bg: #1e293b;
+      --line-color: #334155;
+      --margin-color: #f43f5e;
+      --ink-blue: #93c5fd;
+      --ink-black: #f8fafc;
+      background-color: #0f172a;
+      background-image: repeating-linear-gradient(var(--paper-bg) 0px, var(--paper-bg) 27px, var(--line-color) 28px);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #e2e8f0;
+      font-family: var(--font-hand);
+      color: var(--ink-black);
+      line-height: 1.6;
+      font-size: 1.25rem;
+      padding: 20px 10px;
+      transition: all 0.3s ease;
+    }
+
+    /* Top Control Bar */
+    .top-bar {
+      max-width: 1100px;
+      margin: 0 auto 15px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      background: rgba(255, 255, 255, 0.95);
+      padding: 12px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 10px;
+      z-index: 100;
+    }
+
+    .top-bar h1 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .theme-btn {
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid #cbd5e1;
+      background: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s ease;
+    }
+    .theme-btn:hover {
+      background: #f1f5f9;
+      transform: translateY(-1px);
+    }
+
+    .search-box {
+      position: relative;
+    }
+    .search-box input {
+      padding: 6px 12px 6px 32px;
+      border-radius: 20px;
+      border: 1px solid #cbd5e1;
+      font-size: 0.9rem;
+      width: 220px;
+      outline: none;
+    }
+    .search-box svg {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748b;
+    }
+
+    /* Main Notebook Container */
+    .notebook {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--paper-bg);
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05);
+      position: relative;
+      padding: 40px 50px 60px 80px;
+      min-height: 100vh;
+      border-left: 2px solid var(--margin-color);
+    }
+
+    /* Spiral Rings Effect */
+    .spiral-holes {
+      position: absolute;
+      left: 20px;
+      top: 30px;
+      bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      pointer-events: none;
+    }
+    .hole {
+      width: 16px;
+      height: 16px;
+      background: #cbd5e1;
+      border-radius: 50%;
+      box-shadow: inset 2px 2px 4px rgba(0,0,0,0.4), 0 0 0 2px #94a3b8;
+      position: relative;
+    }
+    .hole::after {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 4px;
+      width: 24px;
+      height: 8px;
+      background: linear-gradient(90deg, #64748b, #cbd5e1, #475569);
+      border-radius: 4px;
+      box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+    }
+
+    /* Cover / Notebook Header */
+    .notebook-header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 3px double var(--ink-blue);
+      position: relative;
+    }
+
+    .notebook-title {
+      font-family: var(--font-title);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--ink-blue);
+      text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+      line-height: 1.1;
+      margin-bottom: 5px;
+    }
+
+    .notebook-subtitle {
+      font-size: 1.4rem;
+      color: #64748b;
+      font-weight: 400;
+    }
+
+    .tag-badge {
+      display: inline-block;
+      background: var(--highlighter-yellow);
+      padding: 3px 12px;
+      border-radius: 15px;
+      font-size: 1rem;
+      font-weight: 700;
+      transform: rotate(-2deg);
+      border: 1px dashed #d97706;
+      margin-top: 10px;
+    }
+
+    /* Section Styling */
+    .note-section {
+      margin-bottom: 45px;
+      position: relative;
+    }
+
+    .section-title {
+      font-family: var(--font-title);
+      font-size: 2.3rem;
+      color: #b91c1c;
+      border-bottom: 2px dashed #fca5a5;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Notes Grid */
+    .notes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.9);
+      border-radius: 8px;
+      padding: 18px 22px;
+      box-shadow: 2px 4px 12px rgba(0,0,0,0.06);
+      border: 1px solid #e2e8f0;
+      position: relative;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 5px;
+    }
+
+    .func-name {
+      font-family: var(--font-title);
+      font-size: 1.8rem;
+      color: var(--ink-blue);
+      font-weight: 700;
+    }
+
+    .category-tag {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+
+    .syntax-box {
+      font-family: var(--font-code);
+      font-size: 0.95rem;
+      background: #0f172a;
+      color: #38bdf8;
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin: 8px 0 12px 0;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+
+    .explanation-mr {
+      color: #1e293b;
+      font-size: 1.15rem;
+      margin-top: 10px;
+      background: rgba(254, 240, 138, 0.35);
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+
+    /* Sticky Notes */
+    .sticky-note {
+      background: var(--sticky-yellow);
+      padding: 15px 20px;
+      border-radius: 2px;
+      box-shadow: 3px 5px 10px rgba(0,0,0,0.15);
+      position: relative;
+      margin: 20px 0;
+      transform: rotate(-1deg);
+      border-left: 5px solid #eab308;
+    }
+    .sticky-note.pink {
+      background: var(--sticky-pink);
+      border-left-color: #f43f5e;
+      transform: rotate(1deg);
+    }
+    .sticky-note.green {
+      background: var(--sticky-green);
+      border-left-color: #22c55e;
+      transform: rotate(-0.5deg);
+    }
+
+    .sticky-title {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Tape Effect */
+    .tape {
+      width: 80px;
+      height: 25px;
+      background: rgba(255, 255, 255, 0.6);
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-3deg);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border: 1px dashed rgba(0,0,0,0.1);
+    }
+
+    /* Quiz Cards */
+    .quiz-card {
+      background: #ffffff;
+      border: 2px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 18px;
+      margin-bottom: 15px;
+      font-family: var(--font-sans);
+    }
+
+    .quiz-q {
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .quiz-ans {
+      display: none;
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-top: 10px;
+      color: #166534;
+      font-size: 0.95rem;
+    }
+
+    .toggle-ans-btn {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .toggle-ans-btn:hover {
+      background: #1d4ed8;
+    }
+
+    /* Footer */
+    .notebook-footer {
+      text-align: center;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 2px dashed #cbd5e1;
+      font-size: 1.1rem;
+      color: #64748b;
+    }
+
+    @media (max-width: 768px) {
+      .notebook {
+        padding: 30px 20px 40px 40px;
+      }
+      .spiral-holes {
+        left: 8px;
+      }
+      .notes-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="theme-ruled">
+
+  <!-- Top Control Bar -->
+  <div class="top-bar">
+    <h1>📚 HTML & CSS - Handwritten Master Study Hub</h1>
+    <div class="controls">
+      <div class="search-box">
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <input type="text" id="searchInput" placeholder="Search topic or tag..." onkeyup="filterNotes()">
+      </div>
+      <button class="theme-btn" onclick="setTheme('ruled')">📝 Ruled</button>
+      <button class="theme-btn" onclick="setTheme('yellow')">🟡 Legal Pad</button>
+      <button class="theme-btn" onclick="setTheme('grid')">📐 Grid</button>
+      <button class="theme-btn" onclick="setTheme('dark')">🌙 Blackboard</button>
+      <button class="theme-btn" onclick="window.print()" style="background:#2563eb; color:white; border:none;">🖨️ Print PDF</button>
+    </div>
+  </div>
+
+  <!-- Main Notebook Container -->
+  <div class="notebook">
+
+    <!-- Spiral Rings -->
+    <div class="spiral-holes">
+      <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+      <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+      <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+      <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+      <div class="hole"></div><div class="hole"></div><div class="hole"></div>
+    </div>
+
+    <!-- Notebook Header -->
+    <div class="notebook-header">
+      <div class="notebook-title">Full-Stack HTML & CSS Master Study Notes</div>
+      <div class="notebook-subtitle">हँडरिटन नोट्स व प्रॅक्टिस गाइड (Analyzed Workspace Files: html1-17, div1-5, carweb)</div>
+      <span class="tag-badge">✨ Complete Folder Analysis & Step-by-Step Study Roadmap</span>
+    </div>
+
+    <!-- MODULE 1: BASIC HTML -->
+    <div class="note-section" id="sec-basic">
+      <div class="section-title">📄 Module 1: Basic HTML Structure & Formatting</div>
+      
+      <div class="notes-grid">
+        <div class="card" data-search="html head body title structure">
+          <div class="card-header">
+            <span class="func-name">1. HTML Page Structure</span>
+            <span class="category-tag">Basic HTML</span>
+          </div>
+          <div>प्रत्येक वेबपेजची मूलभूत रचना बनवण्यासाठी:</div>
+          <div class="syntax-box">&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body bgcolor="plum"&gt;
+  ... Content ...
+&lt;/body&gt;
+&lt;/html&gt;</div>
+          <div class="explanation-mr">💡 <b>मराठीत:</b> <code>&lt;head&gt;</code> मध्ये टायटल व लिंक्स असतात, तर <code>&lt;body&gt;</code> मध्ये स्क्रीनवर दिसणारा सर्व कंटेंट असतो.</div>
+        </div>
+
+        <div class="card" data-search="h1 bold italic underline font br hr text">
+          <div class="card-header">
+            <span class="func-name">2. Text Formatting Tags</span>
+            <span class="category-tag">Formatting</span>
+          </div>
+          <div>अक्षरांचा आकार व डिझाइन बदलण्यासाठी:</div>
+          <div class="syntax-box">&lt;h1&gt; to &lt;h6&gt; ➔ Headings
+&lt;b&gt; ➔ Bold
+&lt;i&gt; ➔ Italic
+&lt;u&gt; ➔ Underline
+&lt;font color="red" size="4"&gt; ➔ Font Styling
+&lt;br&gt; ➔ Line Break | &lt;hr&gt; ➔ Line</div>
+          <div class="explanation-mr">💡 <b>मराठीत:</b> <code>&lt;b&gt;</code> ने मजकूर जाड होतो, <code>&lt;i&gt;</code> ने तिरपा होतो आणि <code>&lt;u&gt;</code> ने खाली रेघ येते.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 2: LISTS -->
+    <div class="note-section" id="sec-lists">
+      <div class="section-title">📋 Module 2: HTML Lists (Ordered & Unordered)</div>
+      
+      <div class="notes-grid">
+        <div class="card" data-search="ul ol li list nested inside center">
+          <div class="card-header">
+            <span class="func-name">1. Lists & Centered Symbols</span>
+            <span class="category-tag">Lists</span>
+          </div>
+          <div>क्रमान्वये किंवा बुलेट्सने याद्या बनवण्यासाठी:</div>
+          <div class="syntax-box">&lt;ul type="square"&gt;
+  &lt;li&gt;HTML5&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol type="A"&gt;
+  &lt;li&gt;Physics&lt;/li&gt;
+&lt;/ol&gt;</div>
+          <div class="explanation-mr">💡 <b>Pro Tip:</b> लिस्टचे नंबर्स किंवा बुलेट्स सेंटरला आणण्यासाठी CSS मध्ये <code>list-style-position: inside;</code> वापरा!</div>
+        </div>
+      </div>
+
+      <div class="sticky-note green">
+        <div class="tape"></div>
+        <div class="sticky-title">📌 List Types Summary:</div>
+        <div>• <b>Unordered (`&lt;ul&gt;`) Types:</b> <code>disc</code>, <code>circle</code>, <code>square</code>, <code>none</code><br>
+        • <b>Ordered (`&lt;ol&gt;`) Types:</b> <code>1</code>, <code>A</code>, <code>a</code>, <code>I</code>, <code>i</code></div>
+      </div>
+    </div>
+
+    <!-- MODULE 3: FORMS -->
+    <div class="note-section" id="sec-forms">
+      <div class="section-title">📝 Module 3: HTML Forms & Validations</div>
+      
+      <div class="notes-grid">
+        <div class="card" data-search="form input text password date number pattern radio checkbox select option submit reset">
+          <div class="card-header">
+            <span class="func-name">1. Form Controls & Validation</span>
+            <span class="category-tag">Forms</span>
+          </div>
+          <div>युझरकडून डेटा इनपुट घेण्यासाठी:</div>
+          <div class="syntax-box">&lt;form action="login.java"&gt;
+  Text: &lt;input type="text" name="user" required&gt;
+  Pass: &lt;input type="password" name="pass"&gt;
+  Mobile: &lt;input type="text" pattern="[0-9]{10}"&gt;
+  Radio: &lt;input type="radio" name="g" value="m"&gt;
+  Check: &lt;input type="checkbox" name="c"&gt;
+  Select: &lt;select&gt;&lt;option&gt;Pune&lt;/option&gt;&lt;/select&gt;
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;</div>
+          <div class="explanation-mr">💡 <b>मराठीत:</b> <code>pattern="[0-9]{10}"</code> द्वारे मोबाईल नंबर नक्की १० अंकीच असल्याचे व्हॅलिडेट केले जाते. <code>radio</code> मध्ये एकच पर्याय निवडता येतो.</div>
+        </div>
+      </div>
+
+      <div class="sticky-note pink">
+        <div class="tape"></div>
+        <div class="sticky-title">📌 Radio vs Checkbox Note:</div>
+        <div>• <b>Radio (`type="radio"`):</b> एकाच `name` मधील फक्त १ पर्याय निवडता येतो (उदा. Male/Female).<br>
+        • <b>Checkbox (`type="checkbox"`):</b> एकापेक्षा जास्त पर्याय एकत्र निवडता येतात (उदा. Courses / Pass).</div>
+      </div>
+    </div>
+
+    <!-- MODULE 4: TABLES -->
+    <div class="note-section" id="sec-tables">
+      <div class="section-title">📊 Module 4: HTML Tables & Cell Merging</div>
+      
+      <div class="notes-grid">
+        <div class="card" data-search="table tr th td colspan rowspan cellpadding border">
+          <div class="card-header">
+            <span class="func-name">1. Table Layouts & Spans</span>
+            <span class="category-tag">Tables</span>
+          </div>
+          <div>डेटा रो व कॉलमच्या स्वरूपात मांडण्यासाठी:</div>
+          <div class="syntax-box">&lt;table border="2" cellpadding="8"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Roll No&lt;/th&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;1&lt;/td&gt;
+    &lt;td&gt;aaaa&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td colspan="2" align="center"&gt;Total: 1&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</div>
+          <div class="explanation-mr">💡 <b>मराठीत:</b> <code>colspan="2"</code> ने कॉलम जोडले जातात, <code>rowspan="2"</code> ने रो जोडल्या जातात आणि <code>cellpadding</code> ने सेलच्या आत जागा मिळते.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 5: MEDIA & IFRAMES -->
+    <div class="note-section" id="sec-media">
+      <div class="section-title">🖼️ Module 5: Images, Links & IFrames</div>
+      
+      <div class="notes-grid">
+        <div class="card" data-search="img a href target iframe mailto link">
+          <div class="card-header">
+            <span class="func-name">1. Media & Page Connecting</span>
+            <span class="category-tag">Links & Iframes</span>
+          </div>
+          <div>फोटो दाखवणे व पेजेस कनेक्ट करणे:</div>
+          <div class="syntax-box">&lt;!-- Image Tag --&gt;
+&lt;img src="car1.jpeg" width="200" height="150"&gt;
+
+&lt;!-- External Link --&gt;
+&lt;a href="https://google.com" target="_blank"&gt;Google&lt;/a&gt;
+
+&lt;!-- Mailto Link --&gt;
+&lt;a href="mailto:contact@car.com"&gt;Email Us&lt;/a&gt;
+
+&lt;!-- Iframe Target Connecting --&gt;
+&lt;a href="welcome.html" target="contentFrame"&gt;Open&lt;/a&gt;
+&lt;iframe name="contentFrame" src="welcome.html" width="100%" height="300"&gt;&lt;/iframe&gt;</div>
+          <div class="explanation-mr">💡 <b>मराठीत:</b> <code>target="contentFrame"</code> मुळे क्लिक केलेली फाईल थेट दिलेल्या <code>&lt;iframe&gt;</code> मध्ये ओपन होते.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 6 & 7: CSS & DIV LAYOUTS -->
+    <div class="note-section" id="sec-css">
+      <div class="section-title">🎨 Module 6 & 7: CSS Types, Box Model & DIV Layouts</div>
+      
+      <div class="notes-grid">
+        <div class="card" data-search="css inline internal external div float clear margin padding display overflow">
+          <div class="card-header">
+            <span class="func-name">1. CSS & Box Model Layouts</span>
+            <span class="category-tag">CSS & Divs</span>
+          </div>
+          <div>पेजचे लेआउट व रंग ठरवण्यासाठी:</div>
+          <div class="syntax-box">/* External CSS Link */
+&lt;link rel="stylesheet" href="carweb.css"&gt;
+
+/* CSS Properties */
+body { background-image: url('wcake1.jpeg'); background-size: cover; }
+.header { width: 100%; height: 10%; background: yellow; }
+.list { width: 20%; float: left; background: pink; }
+.content { width: 80%; float: right; background: gray; overflow-y: auto; }
+.footer { width: 100%; clear: both; background: yellow; }
+.limenu { display: inline; padding: 10px; }</div>
+          <div class="explanation-mr">💡 <b>मराठीत:</b> <code>float: left</code> व <code>float: right</code> ने डावा-उजवा लेआउट बनतो, <code>clear: both</code> ने फुटर खाली येतो आणि <code>display: inline</code> ने मेनू आडवा होतो.</div>
+        </div>
+      </div>
+
+      <div class="sticky-note">
+        <div class="tape"></div>
+        <div class="sticky-title">📌 Real Projects Summary:</div>
+        <div><b>1. IRCTC Booking Portal (`html14.html`):</b> टेबल्स, ड्रॉपडाऊन व चेकबॉक्ससह बनवलेला बुकिंग फॉर्म.<br>
+        <b>2. Car World Website (`carweb.html`, `carweb.css`, `welcome.html`):</b> <div> लेआउट, <iframe> कनेक्टिंग आणि फुटर आयकॉन्स लिंकसह पूर्ण प्रोजेक्ट.</div>
+      </div>
+    </div>
+
+    <!-- MODULE 8: QUIZ SECTION -->
+    <div class="note-section" id="sec-quiz">
+      <div class="section-title">❓ Interactive Practice Quiz</div>
+
+      <div class="quiz-card">
+        <div class="quiz-q">Q1. एका वेबपेजच्या आत दुसरे वेबपेज लोड करण्यासाठी कोणता टॅग आणि ॲट्रिब्यूट जोडतात?</div>
+        <button class="toggle-ans-btn" onclick="toggleAns(this)">Show Answer</button>
+        <div class="quiz-ans"> उत्तर: <code>&lt;iframe name="frameName"&gt;</code> टॅग आणि ॲंकर टॅगमध्ये <code>target="frameName"</code> ॲट्रिब्यूट.</div>
+      </div>
+
+      <div class="quiz-card">
+        <div class="quiz-q">Q2. Floated एलिमेंट्सनंतर फुटर बॉक्स खाली आणण्यासाठी CSS मधील कोणता प्रॉपर्टी वापरतात?</div>
+        <button class="toggle-ans-btn" onclick="toggleAns(this)">Show Answer</button>
+        <div class="quiz-ans"> उत्तर: <code>clear: both;</code> किंवा <code>clear: right;</code></div>
+      </div>
+    </div>
+
+    <!-- Notebook Footer -->
+    <div class="notebook-footer">
+      🎉 Full-Stack HTML & CSS Master Study Hub - Analyzed Practice Folder Project
+    </div>
+
+  </div>
+
+  <!-- JavaScript for Interactive Controls -->
+  <script>
+    function setTheme(theme) {
+      document.body.className = '';
+      document.body.classList.add('theme-' + theme);
+    }
+
+    function filterNotes() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        const searchTerms = card.getAttribute('data-search') || '';
+        const textContent = card.innerText.toLowerCase();
+        if (searchTerms.includes(query) || textContent.includes(query)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function toggleAns(btn) {
+      const ans = btn.nextElementSibling;
+      if (ans.style.display === 'block') {
+        ans.style.display = 'none';
+        btn.innerText = 'Show Answer';
+      } else {
+        ans.style.display = 'block';
+        btn.innerText = 'Hide Answer';
+      }
+    }
+  </script>
+</body>
+</html>

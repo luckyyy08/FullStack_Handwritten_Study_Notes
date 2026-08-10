@@ -1,0 +1,71 @@
+
+{
+	
+	background-color:orange;
+	
+	
+		
+}
+.container{
+	height:5000px;
+	width:5000px;
+background-color:RED;
+}
+.header
+{
+	height:1000px;
+	width:5000px;
+background-color:yellow;
+
+}
+.middle{
+	height:3000px;
+	width:5000px;
+background-color:purple;
+
+}
+.footer{
+	height:1000px;
+	width:5000px;
+background-color:yellow;
+
+}
+.list{
+	height:3000px;
+	width:1500px;
+	float:left;
+	font-size:20px;
+background-color:pink;
+
+}
+ .content{
+	 height:3000px;
+	 width:3500px;
+	float:right;
+background-color:gray;
+	
+ }
+.limenu
+{
+	display:inline;
+	background-color:black;
+	color:white;
+	font-family:arial;
+	padding:10px;
+}
+.divmenu
+	{
+	width:100%;
+	height:5%;
+	background-color:black;
+	padding:5px;
+	font-weight:bold;
+}
+li.hover
+{
+background-color:grey;
+}
+	
+	 
+	 
+	 
