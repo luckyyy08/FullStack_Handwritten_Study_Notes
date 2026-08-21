@@ -1,0 +1,123 @@
+<html>
+
+<head>
+	<title>Login & Registration Form</title>
+</head>
+
+<body bgcolor="lightgreen">
+
+	<center>
+		<form action="login.java">
+
+			<table border="0" cellpadding="6">
+
+				<!-- PERSONAL DETAILS -->
+				<tr>
+					<th colspan="2">
+						<font color="red" size="5">Personal Details</font>
+					</th>
+				</tr>
+
+				<tr>
+					<td><font color="black"><b>Name</b></font></td>
+					<td><input type="text" name="user" value="user"></td>
+				</tr>
+				<tr>
+					<td><font color="black"><b>Password</b></font></td>
+					<td><input type="password" name="pass" value="12345678"></td>
+				</tr>
+				<tr>
+					<td><font color="black"><b>Email id</b></font></td>
+					<td><input type="email" name="email" value="user@gmail.com"></td>
+				</tr>
+				<tr>
+					<td><font color="black"><b>Gender</b></font></td>
+					<td>
+						<font color="black">
+							Male <input type="radio" name="gender" value="male" checked>
+							Female <input type="radio" name="gender" value="female">
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td><font color="black"><b>Contact</b></font></td>
+					<td><input type="text" name="mobile" value="7845695165" pattern="[0-9]{10}"></td>
+				</tr>
+
+				<!-- EDUCATIONAL QUALIFICATIONS -->
+				<tr>
+					<th colspan="2">
+						<br>
+						<font color="red" size="5">Educational Qualifications</font>
+					</th>
+				</tr>
+
+				<tr>
+					<td><font color="black"><b>Degree</b></font></td>
+					<td>
+						<select name="degree">
+							<option value="be" selected>BE</option>
+							<option value="mba">MBA</option>
+							<option value="mca">MCA</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><font color="black"><b>Engineering</b></font></td>
+					<td>
+						<select name="engineering">
+							<option value="comp" selected>Computer Engineering</option>
+							<option value="civil">Civil Engineering</option>
+							<option value="elec">Electrical Engineering</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><font color="black"><b>Hobbies</b></font></td>
+					<td>
+						<font color="black">
+							<input type="checkbox" name="hobbies" value="chess"> Playing Chess
+							<input type="checkbox" name="hobbies" value="books" checked> Reading Books
+						</font>
+					</td>
+				</tr>
+
+				<!-- ADDRESS -->
+				<tr>
+					<th colspan="2">
+						<br>
+						<font color="red" size="5">Address</font>
+					</th>
+				</tr>
+
+				<tr>
+					<td colspan="2" align="center">
+						<textarea name="address" rows="5" cols="55">ewttwe</textarea>
+					</td>
+				</tr>
+
+				<!-- FILE UPLOAD -->
+				<tr>
+					<td colspan="2" align="center">
+						<br>
+						<font color="black"><b>Attach Resume</b></font>
+						<input type="file" name="resume">
+					</td>
+				</tr>
+
+				<!-- SUBMIT BUTTON -->
+				<tr>
+					<td colspan="2" align="center">
+						<br>
+						<input type="submit" value="Submit">
+					</td>
+				</tr>
+
+			</table>
+
+		</form>
+	</center>
+
+</body>
+
+</html>
