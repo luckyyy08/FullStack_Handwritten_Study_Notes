@@ -1,27 +1,25 @@
-function FunctionDemo()
-{
+function FunctionDemo() {
+    function hello() {
+        return "HELLO";
+    }
 
-    function hello()
-    {
-       // alert("Function called")
-       return "Hello"
+    function average() {
+        let a = 10;
+        let b = 20;
+        let c = 30;
+        let avg = (a + b + c) / 3;
+        return "average is " + avg;
     }
-    function add()
-    {
-        let a,b,c 
-        a=10
-        b=20
-        c=a+b
-    //alert(c)
-     return(<h1>addition is{c}</h1>)
-    }
-    
-    //add()
+
     return (
-        <div>
-            {add()}
-            <p>{hello()}</p>
+        <div style={{ padding: "20px", fontFamily: "sans-serif" }}>
+            <h1>Function Demo</h1>
+            <h2>{hello()}</h2>
+            <h2>{hello()}</h2>
+            <h3>{average()}</h3>
         </div>
-    )
+    );
 }
-export default FunctionDemo
+
+export default FunctionDemo;
+
