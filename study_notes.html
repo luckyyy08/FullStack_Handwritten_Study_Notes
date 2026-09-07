@@ -643,11 +643,73 @@ body { background-image: url('wcake1.jpeg'); background-size: cover; }
         <div class="tape"></div>
         <div class="sticky-title">📌 Real Projects Summary:</div>
         <div><b>1. IRCTC Booking Portal (`html14.html`):</b> टेबल्स, ड्रॉपडाऊन व चेकबॉक्ससह बनवलेला बुकिंग फॉर्म.<br>
-        <b>2. Car World Website (`carweb.html`, `carweb.css`, `welcome.html`):</b> <div> लेआउट, <iframe> कनेक्टिंग आणि फुटर आयकॉन्स लिंकसह पूर्ण प्रोजेक्ट.</div>
+        <b>2. Car World Website (`carweb.html`, `carweb.css`, `welcome.html`):</b> &lt;div&gt; लेआउट, &lt;iframe&gt; कनेक्टिंग आणि फुटरमधील आयकॉन्स लिंकिंगसह पूर्ण प्रोजेक्ट.</div>
       </div>
     </div>
 
-    <!-- MODULE 8: QUIZ SECTION -->
+    <!-- MODULE 8: JS DOM DYNAMIC DISPLAY -->
+    <div class="note-section" id="sec-dom">
+      <div class="section-title">⚡ Module 8: JavaScript DOM Dynamic Display (`9.fontsize.html`)</div>
+
+      <div class="notes-grid">
+        <div class="card" data-search="dom getelementbyid style fontsize color backgroundcolor onclick script">
+          <div class="card-header">
+            <span class="func-name">1. DOM Style & Background Change</span>
+            <span class="category-tag">JS DOM</span>
+          </div>
+          <div>बटनावर क्लिक केल्यावर टेक्स्ट व बॅकग्राउंडचा रंग डायनॅमिकली बदलणे:</div>
+          <div class="syntax-box">&lt;script&gt;
+  function Medium() {
+    document.getElementById("update").style.fontSize = "60px";
+    document.getElementById("update").style.color = "blue";
+    document.body.style.backgroundColor = "lightcoral";
+  }
+&lt;/script&gt;
+&lt;button onclick="Medium()"&gt;Medium&lt;/button&gt;</div>
+          <div class="explanation-mr">💡 <b>मराठीत:</b> <code>document.getElementById()</code> द्वारे HTML एलिमेंट पकडून JavaScript ने ऑन-द-स्पॉट फॉन्ट साईज व रंग बदलता येतो!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 9: REACT.JS & VITE SETUP -->
+    <div class="note-section" id="sec-react">
+      <div class="section-title">⚛️ Module 9: React.js & Vite Framework Setup Guide</div>
+
+      <div class="notes-grid">
+        <div class="card" data-search="react reactjs node npm vite jsx single page application framework">
+          <div class="card-header">
+            <span class="func-name">1. React & Web Concepts</span>
+            <span class="category-tag">React.js</span>
+          </div>
+          <div>क्लास नोट्सनुसार मुख्य संकल्पना:</div>
+          <div class="syntax-box">• React.js: Open-source JS library for fast UI & Single Page Applications (SPA).
+• Node.js: JS runtime environment to run JavaScript outside browser.
+• npm: Default Node Package Manager for installing packages.
+• Vite: Next-generation ultra-fast build tool.
+• JSX: JavaScript XML to write HTML directly inside JS code.</div>
+          <div class="explanation-mr">💡 <b>मराठीत:</b> React.js ने सिंगल पेज ॲप्लिकेशन (SPA) अतिशय वेगाने बनवता येतात.</div>
+        </div>
+
+        <div class="card" data-search="npm create vite npm install npm run dev cd reactbatch5 node -v npm -v terminal cmd">
+          <div class="card-header">
+            <span class="func-name">2. Vite React Installation Steps</span>
+            <span class="category-tag">Terminal Commands</span>
+          </div>
+          <div>कमांड प्रॉम्ट मधील पायऱ्या (CMD Steps):</div>
+          <div class="syntax-box">1. node -v & npm -v
+2. npm create vite (or npx create-vite)
+   ➔ Project name: reactbatch5
+   ➔ Select framework: React
+   ➔ Select variant: JavaScript
+3. cd reactbatch5
+4. npm install
+5. npm run dev</div>
+          <div class="explanation-mr">💡 <b>मराठीत:</b> प्रोजेक्ट फोल्डरमध्ये जाऊन <code>npm install</code> केल्यावर सर्व डिपेंडन्सीज डाऊनलोड होतात आणि <code>npm run dev</code> ने लोकल सर्व्हर चालू होतो!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 10: QUIZ SECTION -->
     <div class="note-section" id="sec-quiz">
       <div class="section-title">❓ Interactive Practice Quiz</div>
 
@@ -661,6 +723,12 @@ body { background-image: url('wcake1.jpeg'); background-size: cover; }
         <div class="quiz-q">Q2. Floated एलिमेंट्सनंतर फुटर बॉक्स खाली आणण्यासाठी CSS मधील कोणता प्रॉपर्टी वापरतात?</div>
         <button class="toggle-ans-btn" onclick="toggleAns(this)">Show Answer</button>
         <div class="quiz-ans"> उत्तर: <code>clear: both;</code> किंवा <code>clear: right;</code></div>
+      </div>
+
+      <div class="quiz-card">
+        <div class="quiz-q">Q3. Vite सह नवीन React प्रोजेक्ट सुरु करण्यासाठी कोणती कमांड वापरतात?</div>
+        <button class="toggle-ans-btn" onclick="toggleAns(this)">Show Answer</button>
+        <div class="quiz-ans"> उत्तर: <code>npm create vite</code> (त्यानंतर React व JavaScript पर्याय निवडा).</div>
       </div>
     </div>
 

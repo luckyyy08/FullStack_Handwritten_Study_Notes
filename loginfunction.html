@@ -1,0 +1,33 @@
+<html>
+
+ <head><h1>JAVASCRIPT function</h1>
+ </head>
+<body>
+<center>
+		<script>
+		
+		function login()
+		{
+			username=document.getElementById("txtuser").value
+			userpass=document.getElementById("txtpass").value
+			if(username=="admin"&& password=="12345")
+				alert("login successfully")
+				//document.write("login successfully ")
+			else
+			alert("login fail")
+		}
+
+	
+		
+		</script>
+		 enter username: <input type="text" id="txtuser">
+		 enter password: <input type="text" id="txtpass">
+		<input type="button" value="login" onclick="login()">
+		
+		
+		
+
+				</center>
+	</body>
+	
+	</html>
