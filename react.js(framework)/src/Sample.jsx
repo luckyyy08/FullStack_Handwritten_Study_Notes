@@ -1,12 +1,14 @@
-function Sample()
-{
+import "./style.css"
+
+function Sample() {
     return (
-    <div>
-        <h1>Hello My react application!</h1>
-        <h1>Welcome to my react application!</h1>
-        <img src="https://reactjs.org/logo-og.png" alt="React Logo" />
-    </div>
-    
+        <div className="grid-container">
+            <div className="grid-item">Box 1</div>
+            <div className="grid-item">Box 2</div>
+            <div className="grid-item">Box 3</div>
+            <div className="grid-item">Box 4</div>
+        </div>
     )
 }
+
 export default Sample

@@ -1,12 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import FunctionDemo from './FunctionDemo.jsx'
+import Sample from './Sample.jsx'
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <FunctionDemo />
+    <Sample />
 
   </StrictMode>,
 )
