@@ -1,0 +1,35 @@
+/* A media query is a CSS technique that allows you to apply styles based on specific characteristics of the user's device or
+ environment, such as screen size, resolution, and orientation. It is a fundamental tool for Responsive Web Design, ensuring
+ websites look and function well across desktops, tablets, and smartphones.
+*/
+
+body
+{
+	background-color:plum;
+}
+@media (width<= 500px)
+{
+	body
+	{
+		background-color:lightgreen;
+	}
+	img
+	{
+		//display:none;
+		height:100px;
+		width:100px;
+	}
+	h1
+	{
+		color:red;
+		font-size:20px;
+	}
+	
+}
+@media screen and (min-width: 600px) and (max-height: 300px)
+{
+	body
+	{
+		background-color:pink;
+	}
+}

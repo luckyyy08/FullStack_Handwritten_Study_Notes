@@ -1,0 +1,15 @@
+.grid-container
+{
+	display:grid;
+	grid-template-columns:repeat(4,24%);
+	grid-template-rows:repeat(2,500);
+	gap:20%;
+}
+	 
+.grid-item
+{
+	 background-color:pink;
+}
+	 
+	 
+	 

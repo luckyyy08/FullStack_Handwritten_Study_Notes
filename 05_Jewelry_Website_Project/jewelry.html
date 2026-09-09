@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jewelry Store - Luxury Fine & Traditional Jewelry</title>
+  <meta name="description" content="Explore exquisite traditional and classical fine jewelry, diamond rings, gold earrings, and precious gemstone collections.">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="jewelry.css">
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <div class="header-top">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo">Jewelry Store</a>
+      
+      <!-- Search & Cart Actions -->
+      <div class="header-actions">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" class="search-input" placeholder="Search jewelry...">
+        </div>
+        
+        <button id="cart-icon-btn" class="cart-icon-btn" title="Shopping Cart">
+          🛒
+          <span id="cart-count-badge" class="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="nav-bar">
+      <ul class="nav-list">
+        <li class="nav-item active"><a href="#">HOME</a></li>
+        <li class="nav-item"><a href="#">CATEGORY1</a></li>
+        <li class="nav-item"><a href="#">CATEGORY2</a></li>
+        <li class="nav-item"><a href="#">COLLECTION</a></li>
+        <li class="nav-item"><a href="#">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO BANNER SECTION -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <!-- Left Content -->
+      <div class="hero-content">
+        <h1 class="hero-title">Traditional &amp; classical Jewelry</h1>
+        <p class="hero-description">
+          Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        </p>
+        <button class="btn-shop-now" onclick="document.getElementById('catalog').scrollIntoView({behavior: 'smooth'})">
+          SHOP NOW
+        </button>
+      </div>
+
+      <!-- Right Image -->
+      <div class="hero-image-wrapper">
+        <img src="jewelry_images/jewelry_hero_ring_1786964677267.png" alt="Luxury Diamond Ring" class="hero-img">
+      </div>
+    </div>
+
+    <!-- Hero Slider Dots -->
+    <div class="hero-pagination-dots">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </section>
+
+  <!-- MAIN CATALOG SECTION -->
+  <main id="catalog" class="catalog-section">
+    
+    <!-- LIST VIEW SECTION -->
+    <section class="list-view-section">
+      <h2 class="list-view-title">List View</h2>
+      
+      <!-- Product 1 List Card -->
+      <div class="list-product-card">
+        <div class="list-product-img-box" onclick="openQuickView(1)">
+          <img src="jewelry_images/jewelry_bracelet_list_1786964963824.png" alt="Product 1 Sterling Silver Cuff">
+        </div>
+        <div class="list-product-info">
+          <h3 class="product-name">Product 1</h3>
+          <p class="product-desc">
+            Lorem ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          </p>
+          <div class="product-price">$99.99</div>
+          <button class="btn-add-cart" onclick="addToCart(1)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRID VIEW SECTION -->
+    <section class="grid-view-section">
+      <h2 class="grid-view-title">Grid View</h2>
+
+      <div class="products-grid">
+        
+        <!-- Product 2 Card -->
+        <div class="grid-product-card">
+          <button class="quick-view-btn" onclick="openQuickView(2)" title="Quick View">👁</button>
+          <div class="grid-product-img-box" onclick="openQuickView(2)">
+            <img src="jewelry_images/jewelry_gold_earrings_1786964988189.png" alt="Product 2 Gold Earrings">
+          </div>
+          <div class="grid-product-info">
+            <h3 class="grid-product-name">Product 2</h3>
+            <div class="grid-product-price">$99.99</div>
+            <button class="btn-add-cart" onclick="addToCart(2)">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 3 Card -->
+        <div class="grid-product-card">
+          <button class="quick-view-btn" onclick="openQuickView(3)" title="Quick View">👁</button>
+          <div class="grid-product-img-box" onclick="openQuickView(3)">
+            <img src="jewelry_images/jewelry_pink_set_1786965043936.png" alt="Product 3 Rose Quartz Set">
+          </div>
+          <div class="grid-product-info">
+            <h3 class="grid-product-name">Product 3</h3>
+            <div class="grid-product-price">$99.99</div>
+            <button class="btn-add-cart" onclick="addToCart(3)">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 4 Card -->
+        <div class="grid-product-card">
+          <button class="quick-view-btn" onclick="openQuickView(4)" title="Quick View">👁</button>
+          <div class="grid-product-img-box" onclick="openQuickView(4)">
+            <img src="jewelry_images/jewelry_diamond_earrings_1786965292484.png" alt="Product 4 Diamond Drop Earrings">
+          </div>
+          <div class="grid-product-info">
+            <h3 class="grid-product-name">Product 4</h3>
+            <div class="grid-product-price">$99.99</div>
+            <button class="btn-add-cart" onclick="addToCart(4)">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 5 Card -->
+        <div class="grid-product-card">
+          <button class="quick-view-btn" onclick="openQuickView(5)" title="Quick View">👁</button>
+          <div class="grid-product-img-box" onclick="openQuickView(5)">
+            <img src="jewelry_images/jewelry_blue_set_1786965573644.png" alt="Product 5 Aquamarine Sapphire Set">
+          </div>
+          <div class="grid-product-info">
+            <h3 class="grid-product-name">Product 5</h3>
+            <div class="grid-product-price">$99.99</div>
+            <button class="btn-add-cart" onclick="addToCart(5)">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PAGINATION BAR -->
+    <div class="pagination-container">
+      <a href="#" class="page-link">&lt;</a>
+      <a href="#" class="page-link active">1</a>
+      <a href="#" class="page-link">2</a>
+      <a href="#" class="page-link">3</a>
+      <a href="#" class="page-link">&gt;</a>
+      <a href="#" class="page-link next-btn">Next</a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER SECTION -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <div class="footer-logo">Jewelry Store</div>
+        <p>Providing high-crafted luxury fine jewelry, bespoke engagement rings, and classic gemstones since 1995.</p>
+      </div>
+      <div class="footer-col">
+        <h4>CATEGORIES</h4>
+        <ul class="footer-links">
+          <li><a href="#">Rings</a></li>
+          <li><a href="#">Necklaces &amp; Pendants</a></li>
+          <li><a href="#">Earrings</a></li>
+          <li><a href="#">Bracelets</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>CUSTOMER SERVICE</h4>
+        <ul class="footer-links">
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns &amp; Exchange</a></li>
+          <li><a href="#">Ring Size Guide</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>NEWSLETTER</h4>
+        <p style="margin-bottom: 0.8rem;">Subscribe to receive updates on new collections &amp; special offers.</p>
+        <div style="display: flex; gap: 4px;">
+          <input type="email" placeholder="Your email address" style="padding: 0.5rem; width: 100%; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 3px;">
+          <button style="background: var(--color-gold); color: #000; padding: 0 0.8rem; font-weight: bold; border-radius: 3px;">GO</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Jewelry Store. All Rights Reserved. Crafted with elegance.
+    </div>
+  </footer>
+
+  <!-- SHOPPING CART DRAWER -->
+  <div id="cart-overlay" class="cart-overlay"></div>
+  <div id="cart-drawer" class="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Shopping Cart</h3>
+      <button id="close-cart-btn" class="close-cart-btn">&times;</button>
+    </div>
+    <div id="cart-items-container" class="cart-items-body">
+      <p class="cart-empty-msg">Your shopping cart is empty.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Subtotal:</span>
+        <span id="cart-total-amount">$0.00</span>
+      </div>
+      <button class="btn-checkout" onclick="alert('Proceeding to secure checkout!')">PROCEED TO CHECKOUT</button>
+    </div>
+  </div>
+
+  <!-- QUICK VIEW MODAL -->
+  <div id="modal-overlay" class="modal-overlay">
+    <div class="quick-view-modal">
+      <button id="modal-close-btn" class="modal-close-btn">&times;</button>
+      <div class="modal-img-wrapper">
+        <img id="modal-product-img" src="" alt="Product Detail">
+      </div>
+      <div class="modal-info-wrapper">
+        <h3 id="modal-product-title" class="product-name" style="font-size: 1.4rem;">Product</h3>
+        <div id="modal-product-price" class="product-price" style="font-size: 1.3rem;">$0.00</div>
+        <p id="modal-product-desc" class="product-desc" style="margin-bottom: 1.5rem;">Description here...</p>
+        <button id="modal-add-btn" class="btn-add-cart" style="align-self: flex-start;">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript File -->
+  <script src="jewelry.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+.grid-container
+{
+	display:grid;
+	grid-template-columns:repeat(4,24%);
+	grid-template-rows:repeat(2,500px);
+	gap:20px;
+}
+	 
+.grid-item
+{
+	 background-color:black;
+}
+h1
+{
+	text-align:center;
+	color:white;
+}
+p
+{
+	font-size:40px;
+	color:plum;
+}
+	//24% is width
+	//300px is height
+ 
+	 

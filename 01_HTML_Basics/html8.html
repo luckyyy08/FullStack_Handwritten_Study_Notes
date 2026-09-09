@@ -1,0 +1,87 @@
+<html>
+<head>
+	<title>Employee Form</title>
+</head>
+<body>
+	<center>
+		<h1>EMPLOYEE FORM</h1>
+		<form action="employee.java">
+			<table border="2" cellpadding="6">
+				<tr>
+					<td>Enter username:</td>
+					<td><input type="text" name="user"></td>
+				</tr>
+				<tr>
+					<td>Enter password:</td>
+					<td><input type="password" name="pass"></td>
+				</tr>
+				<tr>
+					<td>Enter employment:</td>
+					<td><input type="text" name="employee"></td>
+				</tr>
+				<tr>
+					<td>Enter exam time:</td>
+					<td><input type="datetime-local" name="datetime"></td>
+				</tr>
+				<tr>
+					<td>Enter Mobile Number:</td>
+					<td><input type="text" name="mobile" pattern="[0-9]{10}"></td>
+				</tr>
+				<tr>
+					<td>Enter email:</td>
+					<td><input type="email" name="email"></td>
+				</tr>
+				<tr>
+					<td>Enter d.o.b:</td>
+					<td><input type="date" name="dob"></td>
+				</tr>
+				<tr>
+					<td>Enter married status:</td>
+					<td>
+						<input type="radio" name="married_status" value="married">Married
+						<input type="radio" name="married_status" value="unmarried">Unmarried
+					</td>
+				</tr>
+				<tr>
+					<td>Enter gender:</td>
+					<td>
+						<input type="radio" name="gender" value="male">Male
+						<input type="radio" name="gender" value="female">Female
+					</td>
+				</tr>
+				<tr>
+					<td>Select City:</td>
+					<td>
+						<select name="city">
+							<option value="nashik">Nashik</option>
+							<option value="pune">Pune</option>
+							<option value="mumbai">Mumbai</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Specify Your Role:</td>
+					<td>
+						<input type="radio" value="admin" name="role">Admin<br>
+						<input type="radio" value="engineer" name="role">Engineer<br>
+						<input type="radio" value="manager" name="role">Manager<br>
+						<input type="radio" value="guest" name="role">Guest
+					</td>
+				</tr>
+				<tr>
+					<td>Single Sign On:</td>
+					<td>
+						<input type="radio" value="mail" name="sso">Mail<br>
+						<input type="radio" value="payroll" name="sso">Payroll<br>
+						<input type="radio" value="self_service" name="sso">Self Service
+					</td>
+				</tr>
+				<tr>
+					<td align="center"><input type="submit" value="SignUp"></td>
+					<td align="center"><input type="reset" value="Refresh"></td>
+				</tr>
+			</table>
+		</form>
+	</center>
+</body>
+</html>
